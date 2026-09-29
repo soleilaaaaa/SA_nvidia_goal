@@ -1,5 +1,5 @@
 """
-Banc d'essai d'accélération d'inférence : Segment Anything (SAM ViT-B)
+Essai d'accélération d'inférence : Segment Anything (SAM ViT-B)
 Optimisation du graphe via NVIDIA TensorRT 10 sur GPU NVIDIA.
 Méthodologie de benchmark rigoureuse via CUDA Events matériels.
 """
