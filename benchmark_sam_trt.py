@@ -163,7 +163,7 @@ colors = ["#555555", "#76B900"]
 
 plt.figure(figsize=(8, 5), dpi=300)
 bars = plt.bar(frameworks, latencies, color=colors, width=0.45)
-plt.ylabel("Latence moyenne d'inférence (ms) - Plus bas est meilleur", fontweight="bold")
+plt.ylabel("Latence moyenne d'inférence (ms)", fontweight="bold")
 plt.title("Benchmark Inférence SAM ViT-B (Image Encoder)\nPyTorch vs NVIDIA TensorRT", fontweight="bold")
 
 for bar in bars:
