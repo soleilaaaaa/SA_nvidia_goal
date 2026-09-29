@@ -55,7 +55,7 @@ The objective of this proof of concept was to optimize the Vision Transformer pi
 | **Cosine Similarity** | **1.000000** | 1.000000 |
 | **Root Mean Squared Error (RMSE)** | **9.017e-08** | 0.000000 |
 | **Mean Absolute Error (MAE)** | **5.958e-08** | 0.000000 |
-| **Max Absolute Error** | **0.000003** | 0.000000 |
+| **Max Absolute Error** | **0.00000178** | 0.000000 |
 
 ![Precision Drift Distribution](precision_drift_distribution.png)
 
@@ -65,7 +65,7 @@ The objective of this proof of concept was to optimize the Vision Transformer pi
 
 1. **Deterministic Latency:** The p95 latency decreased from 405.38 ms to 311.55 ms, demonstrating improved predictability under load.
 2. **Operational Throughput:** Throughput increased by 0.75 FPS, allowing an additional ~65,000 processed frames per day on the same hardware instance.
-3. **Signal Preservation:** With a Cosine Similarity of 1.0 and a maximum error of $1.80 \times 10^{-6}$ across more than one million points, the optimized model retains strict numerical fidelity with no functional regression.
+3. **Signal Preservation:** With a Cosine Similarity of 1.0 and a maximum error of $1.78 \times 10^{-6}$ across more than one million points, the optimized model retains strict numerical fidelity with no functional regression.
 4. **TensorRT 10 Migration:** Handled TensorRT 10 runtime transitions by leveraging direct tensor memory bindings via `context.set_tensor_address` and asynchronous execution streams (`execute_async_v3`).
 
 ---
