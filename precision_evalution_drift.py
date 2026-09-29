@@ -5,7 +5,25 @@ Sortie graphique : precision_drift_distribution.png (Histogramme logarithmique)
 """
 
 import os
+import sys
+import subprocess
 import urllib.request
+
+# ---------------------------------------------------------
+# 0. Vérification et installation automatique des modules
+# ---------------------------------------------------------
+def install_if_missing(package_name, install_cmd):
+    try:
+        __import__(package_name)
+    except ImportError:
+        print(f"Installation automatique du module requis : {package_name}...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-q"] + install_cmd)
+
+install_if_missing("segment_anything", ["git+https://github.com/facebookresearch/segment-anything.git"])
+install_if_missing("tensorrt", ["--extra-index-url", "https://pypi.nvidia.com", "tensorrt"])
+install_if_missing("cv2", ["opencv-python"])
+install_if_missing("matplotlib", ["matplotlib"])
+
 import numpy as np
 import cv2
 import torch
